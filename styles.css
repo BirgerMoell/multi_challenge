@@ -1,0 +1,49 @@
+/* Reset some basic elements */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply a font throughout the page */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    padding: 20px;
+    color: #333;
+}
+
+/* Style the header */
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Style the section elements */
+section {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #fff;
+}
+
+/* Add some spacing and a border to h2 elements */
+h2 {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+/* Style the footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #333;
+    color: #fff;
+}
+
+/* Add some space between paragraphs */
+p {
+    margin-bottom: 10px;
+}
