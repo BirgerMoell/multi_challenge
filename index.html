@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     <title>Multi-Class Classification Challenge</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <h1>Challenge Overview: Multi-Class Classification of Clinical Disorders Using Speech and Language</h1>
@@ -13,44 +18,95 @@
     </header>
     <section class="introduction">
         <h2>Introduction</h2>
-        <p>The task of classifying clinical disorders from speech and language patterns is a complex challenge that involves understanding the nuances of human communication and the various ways in which disorders can manifest.</p>
+        <p>The task of classifying clinical disorders from speech and language patterns is a complex challenge that
+            involves understanding the nuances of human communication and the various ways in which disorders can
+            manifest.</p>
     </section>
     <section class="challenge-details">
         <h2>Challenge Details</h2>
-        <p>Participants are required to develop a model that can accurately classify multiple clinical disorders from audio and transcript data. The challenge involves dealing with a wide range of variables, including different languages, dialects, and speech impairments.</p>
+        <p>Participants are required to develop a model that can accurately classify multiple clinical disorders from
+            audio and transcript data. The challenge involves dealing with a wide range of variables, including
+            different languages, dialects, and speech impairments.</p>
     </section>
-   <section class="data">
-    <h2>Data Description</h2>
-    <p>The dataset provided for this challenge is a comprehensive collection of audio recordings and transcripts from individuals with a range of clinical disorders. The data is categorized into five distinct classes:</p>
-    <ul>
-        <li><strong>Parkinson's Data:</strong> Includes voice recordings from individuals diagnosed with Parkinson's disease. The data captures various speech impairments that are characteristic of the disorder, such as tremors, rigidity, and bradykinesia affecting speech.</li>
-        <li><strong>Alzheimer's Dementia Data:</strong> Comprises cognitive speech data from individuals with Alzheimer's, highlighting the progressive nature of the disease and its impact on language and memory functions.</li>
-        <li><strong>MCI Data:</strong> Consists of speech samples from individuals with Mild Cognitive Impairment, a condition that may precede Alzheimer's disease, with a focus on early detection markers in speech patterns.</li>
-        <li><strong>Depression Data:</strong> Contains recordings from individuals diagnosed with depression, providing insights into speech features such as flat affect, speech rate, and tone that may correlate with depressive episodes.</li>
-        <li><strong>Schizophrenia Data:</strong> Features speech and language data from individuals with schizophrenia, with an emphasis on detecting disorganized thinking and speech that may present as a symptom of the disorder.</li>
-    </ul>
-    <p>This rich dataset has been anonymized to protect the privacy of the individuals. It includes metadata such as age, gender, and the severity of the disorder, which can be used to stratify the data and potentially improve classification accuracy. Participants are encouraged to explore the dataset thoroughly to understand the complexities and nuances of each class of disorder.</p>
+    <section class="data">
+        <h2>Data Description</h2>
+        <p>The dataset provided for this challenge is a comprehensive collection of audio recordings and transcripts
+            from individuals with a range of clinical disorders. The data is categorized into five distinct classes:</p>
+        <ul>
+            <li><strong>Parkinson's Data:</strong> Includes voice recordings from individuals diagnosed with Parkinson's
+                disease. The data captures various speech impairments that are characteristic of the disorder, such as
+                tremors, rigidity, and bradykinesia affecting speech.</li>
+            <li><strong>Alzheimer's Dementia Data:</strong> Comprises cognitive speech data from individuals with
+                Alzheimer's, highlighting the progressive nature of the disease and its impact on language and memory
+                functions.</li>
+            <li><strong>MCI Data:</strong> Consists of speech samples from individuals with Mild Cognitive Impairment, a
+                condition that may precede Alzheimer's disease, with a focus on early detection markers in speech
+                patterns.</li>
+            <li><strong>Depression Data:</strong> Contains recordings from individuals diagnosed with depression,
+                providing insights into speech features such as flat affect, speech rate, and tone that may correlate
+                with depressive episodes.</li>
+            <li><strong>Schizophrenia Data:</strong> Features speech and language data from individuals with
+                schizophrenia, with an emphasis on detecting disorganized thinking and speech that may present as a
+                symptom of the disorder.</li>
+        </ul>
+        <p>This rich dataset has been anonymized to protect the privacy of the individuals. It includes metadata such as
+            age, gender, and the severity of the disorder, which can be used to stratify the data and potentially
+            improve classification accuracy. Participants are encouraged to explore the dataset thoroughly to understand
+            the complexities and nuances of each class of disorder.</p>
 
-    <section class="data-acess">
-        <h2> Access to the data set</h2>
-        In order to gain access to the Multi dataset, please email multi@kth.se with your contact information and affiliation, as well as a general statement on how you plan to use the data, with a specific mention of the multi challenge. If you are a student, please ask your supervisor to join as well. This membership will give you full access to the dataset through TalkBank, where the Multi dataset will be available.
+        <section class="data-acess">
+            <h2> Access to the data set</h2>
+            In order to gain access to the Multi dataset, please email multi@kth.se with your contact information and
+            affiliation, as well as a general statement on how you plan to use the data, with a specific mention of the
+            multi challenge. If you are a student, please ask your supervisor to join as well. This membership will give
+            you full access to the dataset through TalkBank, where the Multi dataset will be available.
+        </section>
+
+        <section class="model-accuracy">
+            <h2>Model Accuracy Calculation</h2>
+            <p>The accuracy of classification models is a key metric in evaluating their performance. It is calculated
+                as the ratio of correctly predicted observations to the total observations. The formula for accuracy is
+                given by:</p>
+            <p>\[ \text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN} \]</p>
+            <p>Where:</p>
+            <ul>
+                <li><strong>True Positives (TP):</strong> The number of correct predictions that an instance is
+                    positive,</li>
+                <li><strong>True Negatives (TN):</strong> The number of correct predictions that an instance is
+                    negative,</li>
+                <li><strong>False Positives (FP):</strong> The number of incorrect predictions that an instance is
+                    positive, and</li>
+                <li><strong>False Negatives (FN):</strong> The number of incorrect predictions that an instance is
+                    negative.</li>
+            </ul>
+            <p>Accuracy is often used as a measure in classification problems where the number of observations in each
+                class is similar. It may not be a good indicator when dealing with imbalanced datasets.</p>
+        </section>
+
     </section>
-
-</section>
     <section class="evaluation">
         <h2>Evaluation Criteria</h2>
-        <p>Submissions will be evaluated based on their accuracy, robustness, and ability to handle noisy data. The use of innovative techniques and approaches to improve performance on minority classes will also be considered.</p>
+        <p>Submissions will be evaluated based on their accuracy, robustness, and ability to handle noisy data. The use
+            of innovative techniques and approaches to improve performance on minority classes will also be considered.
+        </p>
     </section>
+
     <section class="contact-information">
-    <h2>Study Coordinator</h2>
-    <p>The multi-class classification study of clinical disorders using speech and language is coordinated by Birger Moëll, a dedicated PhD student specializing in speech and language pathology at KTH Royal Institute of Technology. His research focuses on the intersection of linguistics, computer science, and medical diagnostics, aiming to advance the understanding and classification of speech-related symptoms in clinical disorders.</p>
-    <p>For inquiries about the study, dataset access, or collaboration opportunities, please reach out to Birger Moëll at the following email address:</p>
-    <p><a href="mailto:bmoell@kth.se">bmoell@kth.se</a></p>
-</section>
+        <h2>Study Coordinator</h2>
+        <p>The multi-class classification study of clinical disorders using speech and language is coordinated by Birger
+            Moëll, a dedicated PhD student specializing in speech and language pathology at KTH Royal Institute of
+            Technology. His research focuses on the intersection of linguistics, computer science, and medical
+            diagnostics, aiming to advance the understanding and classification of speech-related symptoms in clinical
+            disorders.</p>
+        <p>For inquiries about the study, dataset access, or collaboration opportunities, please reach out to Birger
+            Moëll at the following email address:</p>
+        <p><a href="mailto:bmoell@kth.se">bmoell@kth.se</a></p>
+    </section>
 
     <footer>
         <p>&copy; 2023 Multi-Class Classification Challenge</p>
         <img height="200px" src="icon.webp" alt="Multi-Class Classification Challenge">
     </footer>
 </body>
+
 </html>
